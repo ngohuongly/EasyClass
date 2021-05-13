@@ -1,0 +1,9 @@
+{% block content %}
+<h2>Please see below the list of classes for this semester. For all submissions, please go to classes/submission. </h2>
+<h2>LIST OF CLASSES</h2>
+<ul>
+{% for class in classes %}
+    <li>{{ class.Title }}: {{ class.Desc }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

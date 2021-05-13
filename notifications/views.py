@@ -1,6 +1,14 @@
-from django.http import HttpResponse
+
+from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect,JsonResponse
+from django.urls import reverse
+
+from .models import notif
 
 def index(request):
-    return HttpResponse("PLease see here the most up to date information!")
+    notifications=notif.objects.all()
+    context={'notifications': notifications}
+    return render(request,'notifications/for.html', context)
+
 
 # Create your views here.

@@ -1,0 +1,9 @@
+
+{% block content %}
+<h2>LIST OF FUN EXPERIMENTS</h2>
+<ul>
+{% for experiment in experimentss %}
+    <li>{{ experiment.Title }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

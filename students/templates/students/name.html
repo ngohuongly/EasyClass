@@ -1,0 +1,17 @@
+
+
+{% extends 'students/base.html' %}
+
+{% load static %}
+
+{% block title %}Get Information{% endblock %}
+
+{% block content %}
+<p>Please use the following form to submit your information if your name is not on the student list.</p>
+<form action="{% url 'get_info' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+<img src="{% static 'students/name.png' %}" alt="name">
+{% endblock %}

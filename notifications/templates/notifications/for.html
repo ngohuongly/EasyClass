@@ -1,0 +1,10 @@
+
+{% block content %}
+<h2>NOTIFICATIONS</h2>
+<h2>All new information, class schedule updates or any administration updates will be posted here. </h2>
+<ul>
+{% for notification in notifications %}
+    <li>{{ notification.notif_time }} : {{notification.title}} ----- {{notification.desc}}</li>
+{% endfor %}
+</ul>
+{% endblock %}

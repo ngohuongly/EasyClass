@@ -1,0 +1,17 @@
+
+
+{% extends 'classes/base.html' %}
+
+{% load static %}
+
+{% block title %}Assignments{% endblock %}
+
+{% block content %}
+<p>Please use the following form to submit homework, exam, assignments or projects.</p>
+<form action="{% url 'submission' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+<img src="{% static 'classes/submission.jpg' %}" alt="submission">
+{% endblock %}
